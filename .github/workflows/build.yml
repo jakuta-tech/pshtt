@@ -176,6 +176,9 @@ jobs:
     name: test source - py${{ matrix.python-version }}
     needs:
       - diagnostics
+    permissions:
+      # actions/checkout needs this to fetch code
+      contents: read
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
@@ -188,6 +191,12 @@ jobs:
           - "3.11"
           - "3.12"
     steps:
+      # Note that a duplicate of this step must be added at the top of
+      # each job.
+      - uses: GitHubSecurityLab/actions-permissions/monitor@v1
+        with:
+          # Uses the organization variable unless overridden
+          config: ${{ vars.ACTIONS_PERMISSIONS_CONFIG }}
       - id: harden-runner
         name: Harden the runner
         uses: step-security/harden-runner@v2
@@ -233,11 +242,20 @@ jobs:
         uses: mxschmitt/action-tmate@v3
         if: env.RUN_TMATE
   coveralls-finish:
+    permissions:
+      # actions/checkout needs this to fetch code
+      contents: read
     runs-on: ubuntu-latest
     needs:
       - diagnostics
       - test
     steps:
+      # Note that a duplicate of this step must be added at the top of
+      # each job.
+      - uses: GitHubSecurityLab/actions-permissions/monitor@v1
+        with:
+          # Uses the organization variable unless overridden
+          config: ${{ vars.ACTIONS_PERMISSIONS_CONFIG }}
       - id: harden-runner
         name: Harden the runner
         uses: step-security/harden-runner@v2
@@ -282,6 +300,9 @@ jobs:
       - diagnostics
       - lint
       - test
+    permissions:
+      # actions/checkout needs this to fetch code
+      contents: read
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
@@ -294,6 +315,12 @@ jobs:
           - "3.11"
           - "3.12"
     steps:
+      # Note that a duplicate of this step must be added at the top of
+      # each job.
+      - uses: GitHubSecurityLab/actions-permissions/monitor@v1
+        with:
+          # Uses the organization variable unless overridden
+          config: ${{ vars.ACTIONS_PERMISSIONS_CONFIG }}
       - id: harden-runner
         name: Harden the runner
         uses: step-security/harden-runner@v2
@@ -337,6 +364,9 @@ jobs:
     needs:
       - diagnostics
       - build
+    permissions:
+      # actions/checkout needs this to fetch code
+      contents: read
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
@@ -349,6 +379,12 @@ jobs:
           - "3.11"
           - "3.12"
     steps:
+      # Note that a duplicate of this step must be added at the top of
+      # each job.
+      - uses: GitHubSecurityLab/actions-permissions/monitor@v1
+        with:
+          # Uses the organization variable unless overridden
+          config: ${{ vars.ACTIONS_PERMISSIONS_CONFIG }}
       - id: harden-runner
         name: Harden the runner
         uses: step-security/harden-runner@v2
