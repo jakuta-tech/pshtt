@@ -66,8 +66,6 @@ jobs:
         # https://docs.github.com/en/github/finding-security-vulnerabilities-and-errors-in-your-code/configuring-code-scanning#overriding-automatic-language-detection
 
     steps:
-      # Note that a duplicate of this step must be added at the top of
-      # each job.
       - uses: GitHubSecurityLab/actions-permissions/monitor@v1
         with:
           # Uses the organization variable unless overridden
