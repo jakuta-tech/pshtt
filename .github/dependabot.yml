@@ -7,17 +7,18 @@
 
 updates:
   - directory: /
-<<<<<<< HEAD
     ignore:
       # Managed by cisagov/skeleton-generic
       - dependency-name: actions/cache
       - dependency-name: actions/checkout
       - dependency-name: actions/setup-go
       - dependency-name: actions/setup-python
+      # - dependency-name: cisagov/setup-env-github-action
       - dependency-name: crazy-max/ghaction-dump-context
       - dependency-name: crazy-max/ghaction-github-labeler
       - dependency-name: crazy-max/ghaction-github-status
       - dependency-name: GitHubSecurityLab/actions-permissions
+      # - dependency-name: hashicorp/setup-packer
       - dependency-name: hashicorp/setup-terraform
       - dependency-name: mxschmitt/action-tmate
       - dependency-name: step-security/harden-runner
@@ -25,23 +26,6 @@ updates:
       # - dependency-name: actions/download-artifact
       # - dependency-name: actions/upload-artifact
       # - dependency-name: github/codeql-action
-=======
-    # ignore:
-    #   # Managed by cisagov/skeleton-generic
-    #   - dependency-name: actions/cache
-    #   - dependency-name: actions/checkout
-    #   - dependency-name: actions/setup-go
-    #   - dependency-name: actions/setup-python
-    #   - dependency-name: cisagov/setup-env-github-action
-    #   - dependency-name: crazy-max/ghaction-dump-context
-    #   - dependency-name: crazy-max/ghaction-github-labeler
-    #   - dependency-name: crazy-max/ghaction-github-status
-    #   - dependency-name: GitHubSecurityLab/actions-permissions
-    #   - dependency-name: hashicorp/setup-packer
-    #   - dependency-name: hashicorp/setup-terraform
-    #   - dependency-name: mxschmitt/action-tmate
-    #   - dependency-name: step-security/harden-runner
->>>>>>> e6afb68083e4b6e1ec38f036dee2f5e294b5cc96
     package-ecosystem: github-actions
     schedule:
       interval: weekly
