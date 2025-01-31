@@ -156,6 +156,10 @@ repos:
     rev: v1.13.0
     hooks:
       - id: mypy
+        # IMPORTANT: Keep type hinting-related dependencies of the
+        # mypy pre-commit hook additional_dependencies in sync with
+        # the dev section of setup.py to avoid discrepancies in type
+        # checking between environments.
         additional_dependencies:
           - types-docopt
           - types-setuptools
