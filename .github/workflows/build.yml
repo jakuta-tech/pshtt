@@ -188,6 +188,7 @@ jobs:
           - "3.10"
           - "3.11"
           - "3.12"
+          - "3.13"
     steps:
       - uses: GitHubSecurityLab/actions-permissions/monitor@v1
         with:
@@ -306,6 +307,7 @@ jobs:
           - "3.10"
           - "3.11"
           - "3.12"
+          - "3.13"
     steps:
       - uses: GitHubSecurityLab/actions-permissions/monitor@v1
         with:
@@ -366,6 +368,7 @@ jobs:
           - "3.10"
           - "3.11"
           - "3.12"
+          - "3.13"
     steps:
       - uses: GitHubSecurityLab/actions-permissions/monitor@v1
         with:
