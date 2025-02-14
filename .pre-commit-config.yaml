@@ -183,6 +183,8 @@ repos:
         # the dev section of setup.py to avoid discrepancies in type
         # checking between environments.
         additional_dependencies:
+          - pytest
+          - pytablewriter
           - types-docopt
           - types-pyOpenSSL
           - types-requests
