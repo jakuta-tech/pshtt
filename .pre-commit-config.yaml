@@ -194,18 +194,21 @@ repos:
         # option to enforce a complete mypy configuration.
         args:
           - --scripts-are-modules
-  - repo: https://github.com/pypa/pip-audit
-    rev: v2.7.3
-    hooks:
-      - id: pip-audit
-        args:
-          # Add any pip requirements files to scan
-          - --requirement
-          - requirements-dev.txt
-          - --requirement
-          - requirements-test.txt
-          - --requirement
-          - requirements.txt
+  # pip-audit turns up several vulnerabilities for cryptography, but
+  # we cannot pull in a newer version of that library because we
+  # can't currently support any version of Python later than 3.10.
+  # - repo: https://github.com/pypa/pip-audit
+  #   rev: v2.7.3
+  #   hooks:
+  #     - id: pip-audit
+  #       args:
+  #         # Add any pip requirements files to scan
+  #         - --requirement
+  #         - requirements-dev.txt
+  #         - --requirement
+  #         - requirements-test.txt
+  #         - --requirement
+  #         - requirements.txt
   - repo: https://github.com/asottile/pyupgrade
     # pyupgrade no longer supports Python 3.7 as of version 3.4.0, so
     # we cannot upgrade past the 3.3.2 release:
