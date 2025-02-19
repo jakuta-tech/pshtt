@@ -100,7 +100,6 @@ setup(
         "python-dateutil>=2.7.3",
         "pytz>=2018.5",
         "requests>=2.18.4",
-        # This is necessary to support the python_requires kwarg
         "setuptools",
         "sslyze>=3.0.0,<5.0.0",
         "wget>=3.2",
